@@ -3,3 +3,28 @@
 .my-header, .nav-bar{
     background-color: #040005;
 }
+
+/* Custom background color */
+.bg-custom-black {
+    background-color: #040005;
+  }
+  
+  /* Navigation link styles */
+  .nav-link {
+    padding: 0.5rem 1rem;
+    transition: background-color 0.2s ease;
+    display: inline-block;
+  }
+  
+  /* Hover effect */
+  .nav-link:hover {
+    background-color: #1a1a1a;
+    font-weight: bold;
+  }
+  
+  /* Active link */
+  .nav-link.active {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+  
