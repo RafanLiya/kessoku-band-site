@@ -6,12 +6,21 @@ import { useState } from "react";
 export default function Home() {
   const [activeLink, setActiveLink] = useState("Home");
 
-  const navItems = ["Home", "About The Band", "Media", "Merch", "Tour Dates", "Fan Zone", "Support"];
+  const navItems = [
+    "Home",
+    "About The Band",
+    "Media",
+    "Merch",
+    "Tour Dates",
+    "Fan Zone",
+    "Support",
+  ];
 
   return (
     <div>
-      {/* Header with centered logo */}
-      <header className="my-header flex justify-center shadow-md p-2 bg-custom-black">
+      {/* Header with centered content and spacing between images */}
+      <header className="my-header flex justify-center items-center gap-6 shadow-md p-3 bg-custom-black">
+        <a href="#">
         <Image
           src="/header_logo.png"
           alt="Header Logo"
@@ -19,7 +28,7 @@ export default function Home() {
           height={100}
           priority
         />
-        
+        </a>
       </header>
 
       {/* Navigation bar centered below header */}
