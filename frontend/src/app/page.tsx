@@ -59,47 +59,47 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-custom-black text-white p-4 mt-auto">
         <div className="flex flex-col items-center space-y-2">
-          <p className="font-semibold">Follow Us:</p><br></br>
+          <p className="font-semibold">Follow Us On:</p>
           <div className="flex space-x-6 p-2">
             <a
-              href="https://www.youtube.com/channel/UCZ5lTuGq1EhF7Yk87gN4mNQ" // Replace with official or relevant channel
+              href="https://www.youtube.com/channel/UC6IhDHJbJUoRJGUPnlh5GRQ"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline hover:text-red-500"
+              className="nav-link hover:underline hover:text-red-500"
             >
               YouTube
             </a>
             <a
-              href="https://twitter.com/bocchi_anime" // Replace with real or fan page
+              href="https://twitter.com/daily_bocchi?lang=da"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline hover:text-blue-400"
+              className="nav-link hover:underline hover:text-blue-400"
             >
-              Twitter / X
+              X
             </a>
             <a
-              href="https://www.instagram.com/bocchi_the_rock" // Replace with actual if available
+              href="https://www.instagram.com/bocchi.daily/?hl=en"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline hover:text-pink-400"
+              className="nav-link hover:underline hover:text-pink-400"
             >
               Instagram
             </a>
             <a
-              href="https://myanimelist.net/anime/52958/Bocchi_the_Rock" // Better Wiki-style link
+              href="https://open.spotify.com/artist/2nvl0N9GwyX69RRBMEZ4OD"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline hover:text-yellow-400"
-            >
-              MyAnimeList
-            </a>
-            <a
-              href="https://open.spotify.com/artist/3s6Xo0G3uFCm5bJ2z1yYp7" // Example Spotify artist link
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline hover:text-green-400"
+              className="nav-link hover:underline hover:text-green-400"
             >
               Spotify
+            </a>
+            <a
+              href="https://soundcloud.com/kessokuband"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-link hover:underline hover:text-orange-400"
+            >
+              SoundCloud
             </a>
           </div>
         </div>
