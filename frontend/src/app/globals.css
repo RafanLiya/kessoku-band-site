@@ -1,5 +1,5 @@
 @import "tailwindcss";
 
-.my-header{
-    color: blue;
+.my-header, .nav-bar{
+    background-color: #040005;
 }
