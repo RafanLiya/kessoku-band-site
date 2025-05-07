@@ -65,7 +65,7 @@ export default function Home() {
               href="https://www.youtube.com/channel/UC6IhDHJbJUoRJGUPnlh5GRQ"
               target="_blank"
               rel="noopener noreferrer"
-              className="nav-link hover:underline hover:text-red-500"
+              className="nav-link hover:text-red-500"
             >
               YouTube
             </a>
@@ -73,7 +73,7 @@ export default function Home() {
               href="https://twitter.com/daily_bocchi?lang=da"
               target="_blank"
               rel="noopener noreferrer"
-              className="nav-link hover:underline hover:text-blue-400"
+              className="nav-link hover:text-blue-400"
             >
               X
             </a>
@@ -81,7 +81,7 @@ export default function Home() {
               href="https://www.instagram.com/bocchi.daily/?hl=en"
               target="_blank"
               rel="noopener noreferrer"
-              className="nav-link hover:underline hover:text-pink-400"
+              className="nav-link hover:text-pink-400"
             >
               Instagram
             </a>
@@ -89,7 +89,7 @@ export default function Home() {
               href="https://open.spotify.com/artist/2nvl0N9GwyX69RRBMEZ4OD"
               target="_blank"
               rel="noopener noreferrer"
-              className="nav-link hover:underline hover:text-green-400"
+              className="nav-link hover:text-green-400"
             >
               Spotify
             </a>
@@ -97,7 +97,7 @@ export default function Home() {
               href="https://soundcloud.com/kessokuband"
               target="_blank"
               rel="noopener noreferrer"
-              className="nav-link hover:underline hover:text-orange-400"
+              className="nav-link hover:text-orange-400"
             >
               SoundCloud
             </a>
