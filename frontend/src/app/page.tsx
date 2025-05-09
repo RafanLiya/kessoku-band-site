@@ -7,14 +7,15 @@ export default function Home() {
   const [activeLink, setActiveLink] = useState("Home");
 
   const navItems = [
-    "Home",
-    "About The Band",
-    "Media",
-    "Merch",
-    "Tour Dates",
-    "Fan Zone",
-    "Support",
+    { label: "Home", href: "/" },
+    { label: "About The Band", href: "/about" },
+    { label: "Media", href: "/media" },
+    { label: "Merch", href: "/merch" },
+    { label: "Tour Dates", href: "/tours" },
+    { label: "Fan Zone", href: "/fan-zone" },
+    { label: "Support", href: "/support" },
   ];
+  
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -22,7 +23,7 @@ export default function Home() {
       <div className="bg-custom-black">
         {/* Header */}
         <header className="my-header flex justify-center items-center gap-6 shadow-md p-3">
-          <a href="#">
+          <a href="/">
             <Image
               src="/header_logo.png"
               alt="Header Logo"
@@ -36,17 +37,17 @@ export default function Home() {
         {/* Navigation bar */}
         <nav className="nav-bar p-2">
           <ul className="flex justify-center space-x-6 text-white font-medium">
-            {navItems.map((item) => (
-              <li key={item}>
-                <a
-                  href="#"
-                  className={`nav-link ${activeLink === item ? "active" : ""}`}
-                  onClick={() => setActiveLink(item)}
-                >
-                  {item}
-                </a>
-              </li>
-            ))}
+          {navItems.map(({ label, href }) => (
+            <li key={label}>
+              <a
+                href={href}
+                className={`nav-link ${activeLink === label ? "active" : ""}`}
+                onClick={() => setActiveLink(label)}
+              >
+                {label}
+              </a>
+            </li>
+          ))}
           </ul>
         </nav>
       </div>
