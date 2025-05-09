@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+html,
+body {
+  overscroll-behavior: none;
+}
+
 .my-header, .nav-bar{
     background-color: #040005;
 }
