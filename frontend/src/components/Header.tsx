@@ -9,7 +9,7 @@ const navItems = [
   { label: "About The Band", href: "/about" },
   { label: "Media", href: "/media" },
   { label: "Merch", href: "/merch" },
-  { label: "Tour Dates", href: "/tours" },
+  { label: "Tours", href: "/tours" },
   { label: "Fan Zone", href: "/fan-zone" },
   { label: "Support", href: "/support" },
 ];
