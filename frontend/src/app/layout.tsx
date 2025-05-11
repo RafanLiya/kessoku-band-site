@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="text-white">
+      <body className="">
         <Header />
         <main className="">{children}</main>
         <Footer />
