@@ -10,12 +10,15 @@ interface Item {
   image: string;
 }
 
+interface CartItem extends Item {
+  quantity: number;
+}
+
 export default function Merch() {
   const [items, setItems] = useState<Item[]>([]);
-  const [cart, setCart] = useState<Item[]>([]);
+  const [cart, setCart] = useState<CartItem[]>([]);
 
   useEffect(() => {
-    // Simulate fetch from MongoDB (replace with your API call)
     const fetchItems = async () => {
       const data: Item[] = [
         {
@@ -47,12 +50,32 @@ export default function Merch() {
   }, []);
 
   const addToCart = (item: Item) => {
-    setCart((prev) => [...prev, item]);
+    setCart((prev) => {
+      const existing = prev.find((i) => i.id === item.id);
+      if (existing) {
+        return prev.map((i) =>
+          i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
+        );
+      } else {
+        return [...prev, { ...item, quantity: 1 }];
+      }
+    });
   };
 
   const removeFromCart = (id: string) => {
-    setCart((prev) => prev.filter((item) => item.id !== id));
+    setCart((prev) =>
+      prev
+        .map((item) =>
+          item.id === id
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+        .filter((item) => item.quantity > 0)
+    );
   };
+
+  const getTotal = () =>
+    cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
     <div className="min-h-screen grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
@@ -88,7 +111,9 @@ export default function Merch() {
               <li key={item.id} className="flex justify-between items-center border-b pb-1">
                 <div>
                   <p className="font-semibold">{item.name}</p>
-                  <p className="text-sm">${item.price}</p>
+                  <p className="text-sm">
+                    ${item.price} × {item.quantity} = ${item.price * item.quantity}
+                  </p>
                 </div>
                 <button
                   className="text-red-500 text-sm hover:underline"
@@ -102,7 +127,7 @@ export default function Merch() {
         )}
         {cart.length > 0 && (
           <div className="mt-4 pt-4 border-t font-bold">
-            Total: ${cart.reduce((total, item) => total + item.price, 0)}
+            Total: ${getTotal()}
           </div>
         )}
       </aside>
