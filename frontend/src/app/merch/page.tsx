@@ -19,8 +19,16 @@ export default function Merch() {
   const [cart, setCart] = useState<CartItem[]>([]);
 
   useEffect(() => {
-    const fetchItems = async () => {
-      const data: Item[] = [
+  const fetchItems = async () => {
+    try {
+      const res = await fetch("/api/items");
+      if (!res.ok) throw new Error("Failed to fetch from API");
+      const data: Item[] = await res.json();
+      setItems(data);
+    } catch (err) {
+      console.warn("API fetch failed, using mock data.");
+      // fallback simulation
+      const fallback: Item[] = [
         {
           id: "1",
           name: "Kessoku T-Shirt",
@@ -43,11 +51,13 @@ export default function Merch() {
           image: "/images/kessoku-poster.jpg",
         },
       ];
-      setItems(data);
-    };
+      setItems(fallback);
+    }
+  };
 
-    fetchItems();
-  }, []);
+  fetchItems();
+}, []);
+
 
   const addToCart = (item: Item) => {
     setCart((prev) => {
