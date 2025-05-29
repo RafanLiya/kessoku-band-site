@@ -68,6 +68,20 @@ export default function FanZone() {
           </ul>
         </div>
       </section>
+
+      {/* Video or Playlist Embed */}
+      <section className="mt-6">
+        <h2 className="text-2xl font-semibold mb-4">🎶 Watch / Listen</h2>
+        <div className="aspect-video w-full max-w-3xl mx-auto">
+          <iframe
+            className="w-full h-full rounded-xl shadow-lg"
+            src="https://www.youtube.com/embed/lcB8CKa73B0"
+            title="Kessoku Band Performance"
+            frameBorder="0"
+            allowFullScreen
+          />
+        </div>
+      </section>
       
     </div>
   );
